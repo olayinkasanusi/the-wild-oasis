@@ -4,7 +4,6 @@ export async function getCabins() {
   const { data, error } = await supabase.from("cabins").select("*");
 
   if (error) {
-    console.error("Cabins couldn't be loaded");
     throw new Error("Cabins could not be loaded");
   }
 
@@ -21,7 +20,6 @@ export async function createEditCabin(newCabin, id) {
   const imagePath = hasImagePath
     ? newCabin.image
     : `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
-
   // 1. Create/edit cabin
   let query = supabase.from("cabins");
 
@@ -31,10 +29,9 @@ export async function createEditCabin(newCabin, id) {
   // B) EDIT
   if (id) query = query.update({ ...newCabin, image: imagePath }).eq("id", id);
 
-  const { data, error } = await query.select().single();
+  const { data, error } = await query.select();
 
   if (error) {
-    console.error(error);
     throw new Error("Cabin could not be created");
   }
 
@@ -62,7 +59,7 @@ export async function deleteCabin(id) {
 
   if (error) {
     console.error(error);
-    throw new Error(`Cabin could not be loaded`);
+    throw new Error(`Cabin could not be deleted`);
   }
 
   return data;
