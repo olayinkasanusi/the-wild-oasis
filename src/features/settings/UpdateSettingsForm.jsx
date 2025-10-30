@@ -17,11 +17,13 @@ function UpdateSettingsForm() {
     } = {},
   } = useSettings();
 
-  const { isUpdating, updateSettings } = useUpdateSetting();
+  const { isUpdating, updateSetting } = useUpdateSetting();
 
-  function handleUpdate(e) {
+  function handleUpdate(e, field) {
     const value = e.target.value;
-    console.log(value);
+
+    if (!value) return;
+    updateSetting({ [field]: value });
   }
 
   if (isLoading) {
@@ -45,6 +47,7 @@ function UpdateSettingsForm() {
           id="max-nights"
           disabled={isLoading || isUpdating}
           defaultValue={maxBookingLength}
+          onBlur={(e) => handleUpdate(e, "maxBookingLength")}
         />
       </FormRow>
       <FormRow label="Maximum guests/booking">
@@ -53,6 +56,7 @@ function UpdateSettingsForm() {
           id="max-guests"
           disabled={isLoading || isUpdating}
           defaultValue={maxGuestsPerBooking}
+          onBlur={(e) => handleUpdate(e, "maxGuestsPerBooking")}
         />
       </FormRow>
       <FormRow label="Breakfast price">
@@ -61,6 +65,7 @@ function UpdateSettingsForm() {
           id="breakfast-price"
           disabled={isLoading || isUpdating}
           defaultValue={breakfastPrice}
+          onBlur={(e) => handleUpdate(e, "breakfastPrice")}
         />
       </FormRow>
     </Form>

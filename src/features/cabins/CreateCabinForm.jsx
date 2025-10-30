@@ -10,7 +10,7 @@ import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 import { useForm } from "react-hook-form";
 
-function CreateCabinForm({ cabinToEdit = {}, setEditForm }) {
+function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editId, ...editValues } = cabinToEdit;
 
   const isEditSession = Boolean(editId);
@@ -35,7 +35,6 @@ function CreateCabinForm({ cabinToEdit = {}, setEditForm }) {
           onSuccess: () => reset(),
         }
       );
-      setEditForm((show) => !show);
     } else
       createCabin(
         { ...data, image: image },
