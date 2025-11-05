@@ -26,6 +26,7 @@ function CabinTable() {
 
   if (isLoading) return <Spinner />;
 
+  // 1.) FILTER
   const filterValue = searchParams.get("discount") || "all";
   console.log(filterValue);
 
@@ -36,6 +37,10 @@ function CabinTable() {
     filteredCabins = cabins.filter((cabin) => cabin.discount === 0);
   if (filterValue === "with-discount")
     filteredCabins = cabins.filter((cabin) => cabin.discount > 0);
+
+  // 2.) SORT
+  const sortBy = searchParams.get("sortBy") || "";
+
   return (
     <Menus>
       <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">

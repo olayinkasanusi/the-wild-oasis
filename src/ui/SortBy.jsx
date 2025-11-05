@@ -1,8 +1,25 @@
 /* eslint-disable react/prop-types */
+import { useSearchParams } from "react-router-dom";
 import Select from "./Select";
 
 function SortBy({ options }) {
-  return <Select options={options} type="white" />;
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortValue = searchParams.get("sortBy") || "";
+
+  function handleChange(e) {
+    searchParams.set("sortBy", e.target.value);
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <Select
+      onChange={handleChange}
+      options={options}
+      type="white"
+      value={sortValue}
+    />
+  );
 }
 
 export default SortBy;
