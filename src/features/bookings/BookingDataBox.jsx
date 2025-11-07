@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { format, isToday } from "date-fns";
 import {
@@ -77,9 +78,13 @@ const Price = styled.div`
   margin-top: 2.4rem;
 
   background-color: ${(props) =>
-    props.isPaid ? "var(--color-green-100)" : "var(--color-yellow-100)"};
+    props.ispaid === "true"
+      ? "var(--color-green-100)"
+      : "var(--color-yellow-100)"};
   color: ${(props) =>
-    props.isPaid ? "var(--color-green-700)" : "var(--color-yellow-700)"};
+    props.ispaid === "true"
+      ? "var(--color-green-700)"
+      : "var(--color-yellow-700)"};
 
   & p:last-child {
     text-transform: uppercase;
@@ -163,7 +168,7 @@ function BookingDataBox({ booking }) {
           {hasBreakfast ? "Yes" : "No"}
         </DataItem>
 
-        <Price isPaid={isPaid}>
+        <Price ispaid={isPaid.toString()}>
           <DataItem icon={<HiOutlineCurrencyDollar />} label={`Total price`}>
             {formatCurrency(totalPrice)}
 
