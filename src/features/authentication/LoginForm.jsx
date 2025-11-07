@@ -12,7 +12,7 @@ function LoginForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormRowVertical label="Email address">
+      <FormRowVertical label="Email address" orientation="vertical">
         <Input
           type="email"
           id="email"
@@ -22,7 +22,8 @@ function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormRowVertical>
-      <FormRowVertical label="Password">
+
+      <FormRowVertical label="Password" orientation="vertical">
         <Input
           type="password"
           id="password"
@@ -31,7 +32,8 @@ function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </FormRowVertical>
-      <FormRowVertical>
+
+      <FormRowVertical orientation="vertical">
         <Button size="large">Login</Button>
       </FormRowVertical>
     </Form>
