@@ -50,7 +50,7 @@ const HamburgerButton = styled.button`
     position: fixed;
     top: 2rem;
     left: 2rem;
-    z-index: 100;
+    z-index: 1010;
     background: none;
     border: none;
     cursor: pointer;
