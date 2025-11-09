@@ -96,7 +96,7 @@ You will need the following installed on your machine:
 
 My name is Sanusi (Uthman) Olayinka, and I am actively seeking collaborations and I am willing to work with teams. Feel free to connect or reach out!
 
-- _LinkedIn:_ [Your LinkedIn URL](https://www.linkedin.com/in/sanusiolayinka)
+- _LinkedIn:_ [https://www.linkedin.com/in/sanusiolayinka](https://www.linkedin.com/in/sanusiolayinka)
 - _GitHub:_ [github.com/olayinkasanusi](http://github.com/olayinkasanusi)
 
 ---
