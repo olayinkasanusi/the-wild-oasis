@@ -108,7 +108,7 @@ function SideBar() {
       <HamburgerButton isOpen={isOpen} onClick={toggleSidebar} />
       <StyledSidebar isOpen={isOpen}>
         <Logo />
-        <MainNav />
+        <MainNav toggleSidebar={toggleSidebar} />
         {/* <Uploader /> */}
       </StyledSidebar>
       <Overlay isOpen={isOpen} onClick={toggleSidebar} />
