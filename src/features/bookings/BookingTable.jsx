@@ -31,10 +31,8 @@ function BookingTable() {
             <BookingRow key={booking.id} booking={booking} />
           )}
         />
-        <Table.Footer>
-          <Pagination count={count} />
-        </Table.Footer>
       </Table>
+      <Pagination count={count} />
     </Menus>
   );
 }

@@ -6,16 +6,25 @@ const Form = styled.form`
     css`
       padding: 2.4rem 4rem;
 
-      /* Box */
       background-color: var(--color-grey-0);
       border: 1px solid var(--color-grey-100);
       border-radius: var(--border-radius-md);
+
+      @media only screen and (max-width: 768px) {
+        padding: 1.6rem 2.4rem;
+      }
     `}
 
   ${(props) =>
     props.type === "modal" &&
     css`
-      width: 80rem;
+      max-width: 80rem;
+      width: 90vw;
+      min-width: 300px;
+
+      @media only screen and (max-width: 768px) {
+        padding: 1.6rem 1.2rem;
+      }
     `}
     
   overflow: hidden;

@@ -14,12 +14,15 @@ import { Flag } from "../../ui/Flag";
 import { formatDistanceFromNow, formatCurrency } from "../../utils/helpers";
 
 const StyledBookingDataBox = styled.section`
-  /* Box */
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
 
   overflow: hidden;
+
+  @media only screen and (max-width: 768px) {
+    border-radius: var(--border-radius-sm);
+  }
 `;
 
 const Header = styled.header`
@@ -50,10 +53,30 @@ const Header = styled.header`
     font-size: 2rem;
     margin-left: 4px;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1.6rem 2.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+
+    & div:first-child {
+      font-size: 1.6rem;
+      gap: 1.2rem;
+    }
+
+    & span {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 const Section = styled.section`
   padding: 3.2rem 4rem 1.2rem;
+
+  @media only screen and (max-width: 768px) {
+    padding: 2.4rem 2.4rem 1rem;
+  }
 `;
 
 const Guest = styled.div`
@@ -66,6 +89,12 @@ const Guest = styled.div`
   & p:first-of-type {
     font-weight: 500;
     color: var(--color-grey-700);
+  }
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
 `;
 
@@ -97,6 +126,17 @@ const Price = styled.div`
     width: 2.4rem;
     color: currentColor !important;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1.2rem 2.4rem;
+    margin-top: 1.6rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
 `;
 
 const Footer = styled.footer`
@@ -104,6 +144,11 @@ const Footer = styled.footer`
   font-size: 1.2rem;
   color: var(--color-grey-500);
   text-align: right;
+
+  @media only screen and (max-width: 768px) {
+    padding: 1.2rem 2.4rem;
+    font-size: 1.1rem;
+  }
 `;
 
 // A purely presentational component

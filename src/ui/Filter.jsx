@@ -10,6 +10,11 @@ const StyledFilter = styled.div`
   padding: 0.4rem;
   display: flex;
   gap: 0.4rem;
+
+  @media only screen and (max-width: 500px) {
+    gap: 0.2rem;
+    padding: 0.3rem;
+  }
 `;
 
 const FilterButton = styled.button`
@@ -26,7 +31,6 @@ const FilterButton = styled.button`
   border-radius: var(--border-radius-sm);
   font-weight: 500;
   font-size: 1.4rem;
-  /* To give the same height as select */
   padding: 0.44rem 0.8rem;
   transition: all 0.3s;
 
@@ -34,7 +38,18 @@ const FilterButton = styled.button`
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
   }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.3rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
 `;
+
 function Filter({ filterField, options }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentFilter = searchParams.get(filterField) || options.at(0).value;

@@ -20,6 +20,16 @@ const FileInput = styled.input.attrs({ type: "file" })`
       background-color: var(--color-brand-700);
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 1.2rem;
+
+    &::file-selector-button {
+      padding: 0.6rem 0.8rem;
+      margin-right: 0.8rem;
+      font-size: 1.2rem;
+    }
+  }
 `;
 
 export default FileInput;

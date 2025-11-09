@@ -7,7 +7,6 @@ import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
 
 const StyledToday = styled.div`
-  /* Box */
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -18,13 +17,21 @@ const StyledToday = styled.div`
   gap: 2.4rem;
   grid-column: 1 / span 2;
   padding-top: 2.4rem;
+
+  @media only screen and (max-width: 1200px) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 2.4rem 1.6rem;
+    gap: 1.6rem;
+  }
 `;
 
 const TodayList = styled.ul`
   overflow: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
 
-  /* Removing scrollbars for webkit, firefox, and ms, respectively */
   &::-webkit-scrollbar {
     width: 0 !important;
   }
@@ -37,9 +44,13 @@ const NoActivity = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
   margin-top: 0.8rem;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.6rem;
+  }
 `;
 
-function TodayActiviy() {
+function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
 
   // if (isLoading) return <Spinner />;
@@ -66,4 +77,4 @@ function TodayActiviy() {
   );
 }
 
-export default TodayActiviy;
+export default TodayActivity;

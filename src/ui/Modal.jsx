@@ -15,6 +15,16 @@ const StyledModal = styled.div`
   box-shadow: var(--shadow-lg);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+
+  /* Ensure modal shrinks on smaller screens */
+  max-width: 90vw;
+  width: auto;
+
+  @media only screen and (max-width: 600px) {
+    padding: 2rem 2.4rem;
+    max-width: 95vw;
+    border-radius: var(--border-radius-md);
+  }
 `;
 
 const Overlay = styled.div`
@@ -47,10 +57,17 @@ const Button = styled.button`
   & svg {
     width: 2.4rem;
     height: 2.4rem;
-    /* Sometimes we need both */
-    /* fill: var(--color-grey-500);
-    stroke: var(--color-grey-500); */
     color: var(--color-grey-500);
+  }
+
+  @media only screen and (max-width: 600px) {
+    top: 0.8rem;
+    right: 1.2rem;
+
+    & svg {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 `;
 

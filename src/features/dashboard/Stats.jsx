@@ -6,8 +6,10 @@ import {
 } from "react-icons/hi2";
 import Stat from "./Stat";
 import { formatCurrency } from "../../utils/helpers";
+// import styled from "styled-components";
 
 /* eslint-disable react/prop-types */
+
 function Stats({ bookings, confirmedStays, numDays, cabinsCount }) {
   const numBookings = bookings.length;
 

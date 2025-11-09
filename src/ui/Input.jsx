@@ -6,6 +6,12 @@ const Input = styled.input`
   border-radius: var(--border-radius-sm);
   padding: 0.8rem 1.2rem;
   box-shadow: var(--shadow-sm);
+  width: 90%;
+
+  @media only screen and (max-width: 768px) {
+    padding: 0.6rem 0.9rem;
+    font-size: 1.3rem;
+  }
 `;
 
 export default Input;

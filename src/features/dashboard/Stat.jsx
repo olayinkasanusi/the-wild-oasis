@@ -2,7 +2,6 @@
 import styled from "styled-components";
 
 const StyledStat = styled.div`
-  /* Box */
   background-color: var(--color-grey-0);
   border: 1px solid var(--color-grey-100);
   border-radius: var(--border-radius-md);
@@ -13,6 +12,20 @@ const StyledStat = styled.div`
   grid-template-rows: auto auto;
   column-gap: 1.6rem;
   row-gap: 0.4rem;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 5rem 1fr;
+    column-gap: 1.2rem;
+    padding: 1.2rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    row-gap: 0.8rem;
+    padding: 1.6rem;
+    text-align: center;
+  }
 `;
 
 const Icon = styled.div`
@@ -22,14 +35,36 @@ const Icon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-sm);
 
-  /* Make these dynamic, based on the received prop */
   background-color: var(--color-${(props) => props.color}-100);
+  transition: all 0.3s;
 
   & svg {
     width: 3.2rem;
     height: 3.2rem;
     color: var(--color-${(props) => props.color}-700);
+    transition: all 0.3s;
+  }
+  @media only screen and (max-width: 768px) {
+    width: 5rem;
+    height: 5rem;
+
+    & svg {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    grid-row: 1 / 2;
+    margin: 0 auto;
+    width: 6.4rem;
+    height: 6.4rem;
+
+    & svg {
+      width: 3.4rem;
+      height: 3.4rem;
+    }
   }
 `;
 
@@ -40,12 +75,21 @@ const Title = styled.h5`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-500);
+
+  @media only screen and (max-width: 500px) {
+    align-self: unset;
+    font-size: 1.1rem;
+  }
 `;
 
 const Value = styled.p`
   font-size: 2.4rem;
   line-height: 1;
   font-weight: 500;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 function Stat({ icon, title, value, color }) {
