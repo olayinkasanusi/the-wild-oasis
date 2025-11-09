@@ -32,7 +32,7 @@ const StyledSidebar = styled.aside`
     left: 0;
     height: 100vh;
     width: 28rem;
-    z-index: 1000;
+    z-index: 900;
     transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
     ${(props) =>
@@ -50,7 +50,7 @@ const HamburgerButton = styled.button`
     position: fixed;
     top: 2rem;
     left: 2rem;
-    z-index: 1010;
+    z-index: 990;
     background: none;
     border: none;
     cursor: pointer;
@@ -94,7 +94,7 @@ const Overlay = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
+    z-index: 800;
   }
 `;
 function SideBar() {
