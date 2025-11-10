@@ -15,8 +15,8 @@
 _THE WILD OASIS_ is a modern, full-featured web application designed to streamline the administrative workflow for small to medium-sized hotels. Built from scratch in _one week_ with a strong focus on _component reusability_ and data efficiency, this project serves as a comprehensive demonstration of professional Front-End development practices.
 
 To login to the app as an administrator, please use this default login details:
-Email: sanusiolayinka7@gmail.com
-Password: Olayinka123
+_Email_: sanusiolayinka7@gmail.com
+_Password_: Olayinka123
 
 ### Motivation
 
