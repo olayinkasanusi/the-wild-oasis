@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import Logo from "../../public/Logo";
 import MainNav from "./MainNav";
 import { useState } from "react";
-// import Uploader from "../data/Uploader";
+import Uploader from "../data/Uploader";
 
 // const StyledSidebar = styled.aside`
 //   background-color: var(--color-grey-0);
@@ -109,7 +109,7 @@ function SideBar() {
       <StyledSidebar isOpen={isOpen}>
         <Logo />
         <MainNav toggleSidebar={toggleSidebar} />
-        {/* <Uploader /> */}
+        <Uploader />
       </StyledSidebar>
       <Overlay isOpen={isOpen} onClick={toggleSidebar} />
     </>
